@@ -1,0 +1,14 @@
+server:
+  port: 7088
+spring:
+  application:
+    admin:
+      enabled: true
+    name: blog
+  r2dbc:
+    url: r2dbc:postgresql://172.28.254.23:5432/1024notes
+    username: postgres
+    password: 123456
+logging:
+  level:
+    org.springframework.r2dbc: DEBUG
