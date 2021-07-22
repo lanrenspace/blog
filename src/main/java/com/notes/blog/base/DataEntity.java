@@ -3,6 +3,7 @@ package com.notes.blog.base;
 import lombok.Data;
 
 import java.io.Serializable;
+import java.time.LocalDateTime;
 import java.util.Date;
 
 /**
@@ -17,29 +18,29 @@ public class DataEntity implements Serializable {
     /**
      * 创建用户
      */
-    protected Integer createBy;
+    private Integer createBy;
 
 
     /**
      * 创建时间
      */
-    protected Date createTime;
+    private LocalDateTime createTime;
 
 
     /**
      * 更新用户
      */
-    protected Integer updateBy;
+    private Integer updateBy;
 
 
     /**
      * 更新用户
      */
-    protected Date updateTime;
+    private LocalDateTime updateTime;
 
 
     /**
      * 逻辑删除
      */
-    protected Boolean delFlag;
+    private Integer delFlag;
 }

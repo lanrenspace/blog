@@ -6,9 +6,23 @@ spring:
       enabled: true
     name: blog
   r2dbc:
-    url: r2dbc:postgresql://172.28.254.23:5432/1024notes
+    url: r2dbc:postgresql://localhost:5432/1024notes
     username: postgres
     password: 123456
+  security:
+    oauth2:
+      client:
+        registration:
+          github:
+            client-id: 3d9da33b99dcdfb03693
+            client-secret: 62cf2152039998454204c776ba94c66b2abc732c
+  jackson:
+    date-format: yyyy.MM.dd HH:mm:ss
+    time-zone: GMT+8
 logging:
   level:
     org.springframework.r2dbc: DEBUG
+
+jwt:
+  expiration:
+    duration: 3600
