@@ -22,7 +22,7 @@ import reactor.core.publisher.Mono;
 /**
  * Create by HeLongJun on 2021/7/21 11:24
  *
- * @author Administrator
+ * @author lanrenspace@163.com
  * @Description: 认证相关处理
  */
 @RequiredArgsConstructor

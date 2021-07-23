@@ -8,7 +8,7 @@ import org.springframework.data.relational.core.mapping.Table;
 /**
  * Create by HeLongJun on 2021/7/16 10:13
  *
- * @author Administrator
+ * @author lanrenspace@163.com
  * @Description: 标签信息
  */
 @Data

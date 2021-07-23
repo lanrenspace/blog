@@ -12,7 +12,7 @@ import java.util.Map;
 /**
  * Create by HeLongJun on 2021/7/22 11:55
  *
- * @author Administrator
+ * @author lanrenspace@163.com
  * @Description: 用户获取工具
  */
 public class UserUtil {

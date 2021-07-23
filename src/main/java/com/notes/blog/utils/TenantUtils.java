@@ -11,7 +11,7 @@ import java.util.List;
 /**
  * Create by HeLongJun on 2021/7/20 16:53
  *
- * @author Administrator
+ * @author lanrenspace@163.com
  * @Description: 租户操作工具
  */
 public class TenantUtils {

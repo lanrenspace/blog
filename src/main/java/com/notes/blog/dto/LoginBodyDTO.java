@@ -7,7 +7,7 @@ import java.io.Serializable;
 /**
  * Create by HeLongJun on 2021/7/21 19:13
  *
- * @author Administrator
+ * @author lanrenspace@163.com
  * @Description: 登陆请求信息
  */
 @Data

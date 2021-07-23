@@ -24,7 +24,7 @@ import java.nio.charset.StandardCharsets;
 /**
  * Create by HeLongJun on 2021/7/21 18:52
  *
- * @author Administrator
+ * @author lanrenspace@163.com
  * @Description:
  */
 @Component
@@ -40,7 +40,7 @@ public class JwtWebFilter implements WebFilter {
         ServerHttpRequest request = serverWebExchange.getRequest();
         ServerHttpResponse response = serverWebExchange.getResponse();
         String path = request.getPath().value();
-        if (path.contains("/auth/login") || path.contains("/auth/register")) {
+        if (path.contains("/auth/login") || path.contains("/auth/register") || path.contains("/v1/aboutInfo")) {
             return webFilterChain.filter(serverWebExchange);
         }
         String auth = request.getHeaders().getFirst(HttpHeaders.AUTHORIZATION);

@@ -5,7 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.data.r2dbc.repository.config.EnableR2dbcRepositories;
 
 /**
- * @author Administrator
+ * @author lanrenspace@163.com
  */
 @EnableR2dbcRepositories
 @SpringBootApplication

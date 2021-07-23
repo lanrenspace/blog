@@ -24,7 +24,7 @@ import java.util.stream.Collectors;
 /**
  * Create by HeLongJun on 2021/7/16 11:46
  *
- * @author Administrator
+ * @author lanrenspace@163.com
  * @Description:
  */
 @Component
@@ -73,7 +73,7 @@ public class LabelsHandler {
         Query query = Query.query(Criteria.where("tenantCode").is(token)).sort(Sort.by(Sort.Direction.DESC, "createTime"));
         return r2dbcEntityTemplate.select(query, Labels.class).collectList().flatMap(labels -> {
             List<LabelsInfoVo> collect = labels.parallelStream().map(cLabels ->
-                    new LabelsInfoVo(cLabels.getLabelId().toString(), cLabels.getLabelName(), cLabels.getPopular())).collect(Collectors.toList());
+                    new LabelsInfoVo(cLabels.getLabelId(), cLabels.getLabelName(), cLabels.getPopular())).collect(Collectors.toList());
             return ResultData.getSuccess(collect);
         }).switchIfEmpty(ResultData.getSuccess(Mono.empty()));
     }

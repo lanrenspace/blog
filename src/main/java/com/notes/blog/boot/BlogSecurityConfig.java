@@ -11,7 +11,7 @@ import org.springframework.security.web.server.SecurityWebFilterChain;
 /**
  * Create by HeLongJun on 2021/7/20 18:33
  *
- * @author Administrator
+ * @author lanrenspace@163.com
  * @Description:
  */
 @EnableWebFluxSecurity
@@ -26,7 +26,7 @@ public class BlogSecurityConfig {
 
         return http
                 .authorizeExchange()
-                .pathMatchers("/auth/login", "/auth/register").permitAll()
+                .pathMatchers("/auth/login", "/auth/register", "/v1/aboutInfo").permitAll()
                 .pathMatchers("/v3/api-docs/**", "/swagger-resources/configuration/ui",
                         "/swagger-resources", "/swagger-resources/configuration/security",
                         "/swagger-ui.html", "/css/**", "/js/**", "/images/**", "/webjars/**", "**/favicon.ico", "/index").permitAll()

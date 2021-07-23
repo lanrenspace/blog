@@ -7,7 +7,7 @@ import org.springframework.data.annotation.Id;
 /**
  * Create by HeLongJun on 2021/7/21 11:50
  *
- * @author Administrator
+ * @author lanrenspace@163.com
  * @Description: 邀请码
  */
 @Data

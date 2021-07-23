@@ -4,12 +4,11 @@ import lombok.Data;
 
 import java.io.Serializable;
 import java.time.LocalDateTime;
-import java.util.Date;
 
 /**
  * Create by HeLongJun on 2021/7/16 16:22
  *
- * @author Administrator
+ * @author lanrenspace@163.com
  * @Description: 业务实体基类
  */
 @Data

@@ -17,7 +17,7 @@ import java.util.stream.Stream;
 /**
  * Create by HeLongJun on 2021/7/21 12:05
  *
- * @author Administrator
+ * @author lanrenspace@163.com
  * @Description: 用户信息
  */
 @Data

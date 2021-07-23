@@ -1,6 +1,6 @@
 package com.notes.blog.routers;
 
-import com.notes.blog.handler.AuthenticateHandler;
+import com.notes.blog.handler.AboutConfigHandler;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.MediaType;
@@ -8,28 +8,27 @@ import org.springframework.web.reactive.function.server.RouterFunction;
 import org.springframework.web.reactive.function.server.RouterFunctions;
 import org.springframework.web.reactive.function.server.ServerResponse;
 
-import static org.springframework.web.reactive.function.server.RequestPredicates.POST;
+import static org.springframework.web.reactive.function.server.RequestPredicates.GET;
 import static org.springframework.web.reactive.function.server.RequestPredicates.accept;
 
 /**
- * Create by HeLongJun on 2021/7/21 12:22
+ * Create by HeLongJun on 2021/7/23 20:34
  *
  * @author lanrenspace@163.com
- * @Description: 认证路由
+ * @Description:
  */
 @Configuration
-public class AuthenticateRouters {
+public class AboutConfigRouters {
 
 
     /**
      * restful 服务
      *
-     * @param authenticateHandler
+     * @param aboutConfigHandler
      * @return
      */
     @Bean
-    public RouterFunction<ServerResponse> authRouter(AuthenticateHandler authenticateHandler) {
-        return RouterFunctions.route(POST("/auth/register").and(accept(MediaType.APPLICATION_JSON)), authenticateHandler::register)
-                .andRoute(POST("/auth/login").and(accept(MediaType.APPLICATION_JSON)), authenticateHandler::login);
+    public RouterFunction<ServerResponse> aboutConfigRouter(AboutConfigHandler aboutConfigHandler) {
+        return RouterFunctions.route(GET("/v1/aboutInfo").and(accept(MediaType.APPLICATION_JSON)), aboutConfigHandler::load);
     }
 }

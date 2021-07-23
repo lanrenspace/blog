@@ -2,18 +2,18 @@ package com.notes.blog.repository;
 
 import com.notes.blog.entity.UserInfo;
 import org.springframework.data.r2dbc.repository.Query;
-import org.springframework.data.repository.reactive.ReactiveCrudRepository;
+import org.springframework.data.r2dbc.repository.R2dbcRepository;
 import org.springframework.stereotype.Repository;
 import reactor.core.publisher.Mono;
 
 /**
  * Create by HeLongJun on 2021/7/21 12:07
  *
- * @author Administrator
+ * @author lanrenspace@163.com
  * @Description:
  */
 @Repository
-public interface UserInfoRepository extends ReactiveCrudRepository<UserInfo, Integer> {
+public interface UserInfoRepository extends R2dbcRepository<UserInfo, Integer> {
 
 
     /**

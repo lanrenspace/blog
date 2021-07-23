@@ -8,6 +8,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.server.reactive.ServerHttpResponse;
 import org.springframework.stereotype.Component;
+import org.springframework.web.server.ResponseStatusException;
 import org.springframework.web.server.ServerWebExchange;
 import org.springframework.web.server.WebExceptionHandler;
 import reactor.core.publisher.Mono;
@@ -15,7 +16,7 @@ import reactor.core.publisher.Mono;
 /**
  * Create by HeLongJun on 2021/7/22 9:46
  *
- * @author Administrator
+ * @author lanrenspace@163.com
  * @Description: 全局异常处理
  */
 @Component
@@ -30,6 +31,11 @@ public class GlobalExceptionHandler implements WebExceptionHandler {
         response.getHeaders().setContentType(MediaType.APPLICATION_JSON);
         if (ex instanceof RequestNoPermissionException) {
             response.setStatusCode(HttpStatus.UNAUTHORIZED);
+        } else if (ex instanceof ResponseStatusException) {
+            ResponseStatusException responseStatusException = (ResponseStatusException) ex;
+            if (responseStatusException.getStatus().value() == HttpStatus.NOT_FOUND.value()) {
+                response.setStatusCode(HttpStatus.NOT_FOUND);
+            }
         }
         String errorMsg = erroToString(ex);
         DataBuffer dataBuffer = response.bufferFactory().wrap(JSON.toJSONBytes(ResultData.error(errorMsg)));
