@@ -83,4 +83,20 @@ public class LabelsHandler {
         return ResultData.getSuccess(UserUtil.getUser());
     }
 
+
+    /**
+     * 根据标签名称创建标签
+     *
+     * @param labelName
+     * @return
+     */
+    public Mono<Labels> createLabels(String labelName) {
+        Labels labels = new Labels();
+        labels.setLabelName(labelName);
+        labels.setLabelAlias(labelName);
+        labels.setArticleCount(0);
+        labels.setPopular(false);
+        labels.setDelFlag(0);
+        return labelsRepository.save(labels);
+    }
 }

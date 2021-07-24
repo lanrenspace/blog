@@ -17,4 +17,31 @@ public interface Constant {
      * 假
      */
     int FALSE = 0;
+
+    /**
+     * 文章状态
+     */
+    interface ArticleStatus {
+        /**
+         * 已发布
+         */
+        int STATUS_PUBLISHED = 1;
+
+        /**
+         * 未发布
+         */
+        int STATUS_UNPUBISHED = 2;
+
+
+        /**
+         * 审核中
+         */
+        int STATUS_REVIEWING = 3;
+
+
+        /**
+         * 等待定时发布中
+         */
+        int STATUS_TIMED = 4;
+    }
 }
